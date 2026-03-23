@@ -6,7 +6,7 @@ import asyncio
 # --- Config ---
 WIDTH, HEIGHT = 800, 600
 FPS = 60
-
+# pygbag --disable-sound-format-error .\main.py
 # --- Init ---
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
