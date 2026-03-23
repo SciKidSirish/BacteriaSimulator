@@ -2,8 +2,9 @@ import pygame
 import sys
 from mechanics import *
 import random
+import asyncio
 # --- Config ---
-WIDTH, HEIGHT = 2000, 1000
+WIDTH, HEIGHT = 800, 600
 FPS = 60
 
 # --- Init ---
@@ -127,7 +128,7 @@ def draw():
 
 
 # --- Main Loop ---
-def main():
+async def main():
     running = True
     while running:
         dt = clock.tick(FPS) / 1000  # delta time (seconds)
@@ -139,10 +140,10 @@ def main():
         update()
         # --- Draw ---
         draw()
+        await asyncio.sleep(0)
 
     pygame.quit()
-    sys.exit()
+    #sys.exit()
 
 
-if __name__ == "__main__":
-    main()
+asyncio.run(main())
